@@ -55,8 +55,8 @@
 #define restrict
 #endif
 
-#define PREFETCH(x, hint) /* disabled */
-#define PREFETCH_OUT(x, hint) /* disabled */
+#define PREFETCH(x, hint) __builtin_prefetch((x), 0, 1)
+#define PREFETCH_OUT(x, hint) __builtin_prefetch((x), 1, 1)
 
 #define ARX(out, in1, in2, s) \
 	{ \
